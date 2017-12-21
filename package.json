@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/olivmonnier/grapesjs-plugin-header.git"
   },
   "keywords": [
     "grapesjs",
     "plugin",
-    "boilerplate",
+    "header",
     "wysiwyg"
   ],
   "author": "olivmonnier",
