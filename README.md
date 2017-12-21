@@ -2,31 +2,11 @@
 
 This plugin adds the header block which allows creating header with different level.
 
-### Usage
-1. Clone this repository `git clone https://github.com/artf/grapesjs-plugin-boilerplate.git`
-1. Replace in all files `YOUR-PLUGIN-NAME` with your plugin name
-1. Update `package.json`
-1. Install dependencies `npm i` and run the local server `npm start`
-1. Start creating your plugin from `src/index.js`
-1. Show some gif/demo if possible
-1. Update README
-1. When you're ready update the production file `npm run build`
-1. Publish
-
-
-
-
 ## Summary
 
 * Plugin name: `grapesjs-plugin-header`
 * Blocks
   * `header`
-
-...
-
-
-
-
 
 ## Options
 
@@ -46,9 +26,6 @@ This plugin adds the header block which allows creating header with different le
   * `npm i grapesjs-plugin-header`
 * GIT
   * `git clone https://github.com/olivmonnier/grapesjs-plugin-header.git`
-
-
-
 
 
 ## Usage
