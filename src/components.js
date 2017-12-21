@@ -1,9 +1,5 @@
 export default (editor, config = {}) => {
   const domc = editor.DomComponents;
-  const defaultType = domc.getType('default');
-  const defaultModel = defaultType.model;
-  const defaultView = defaultType.view;
-
   const textType = domc.getType('text');
   const textModel = textType.model;
   const textView = textType.view;
@@ -12,7 +8,6 @@ export default (editor, config = {}) => {
     model: textModel.extend({
       defaults: Object.assign({}, textModel.prototype.defaults, {
         'custom-name': 'Header',
-        attributes: { 'data-type': 'header' },
         tagName: 'h1',
         traits: [
           {
@@ -30,20 +25,11 @@ export default (editor, config = {}) => {
             changeProp: 1
           }
         ]
-      }),
-      init() {
-        this.listenTo(this, "change:tagName", this.tagUpdated);
-      },
-      tagUpdated() {
-        const coll = this.collection;
-        const at = coll.indexOf(this);
-        coll.remove(this);
-        coll.add(this, { at });
-      }
+      })
     }, {
       isComponent(el) {
-        if (typeof el == 'string') {
-          return { type: 'header' }
+        if (el && el.tagName && ["H1", "H2", "H3", "H4", "H5", "H6"].includes(el.tagName)) {
+          return { type: "header" };
         }
       }
     }),
