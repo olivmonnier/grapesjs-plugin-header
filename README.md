@@ -12,7 +12,7 @@ This plugin adds the header block which allows creating header with different le
 
 |Option|Description|Default|
 |-|-|-
-|`option1`|Description option|`default value`|
+|`Size`|`Header level`|`h1`|
 
 
 

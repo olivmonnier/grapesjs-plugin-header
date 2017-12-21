@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-plugin-header",
-  "version": "0.1.48",
+  "version": "0.1.49",
   "description": "GrapesJS Plugin Header",
   "main": "dist/grapesjs-plugin-header.min.js",
   "scripts": {
