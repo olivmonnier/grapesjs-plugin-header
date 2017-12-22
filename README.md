@@ -1,6 +1,6 @@
 # GrapesJS Plugin Header
 
-This plugin adds the header block which allows creating header with different level.
+This plugin adds a header block with different level size.
 
 ## Summary
 

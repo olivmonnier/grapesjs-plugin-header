@@ -35,5 +35,4 @@ export default (editor, config = {}) => {
     }),
     view: textView
   })
-  // ...
 }
