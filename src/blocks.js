@@ -1,14 +1,14 @@
 export default (editor, config = {}) => {
   const bm = editor.BlockManager;
-  
-  bm.add('header', {
-    label: 'Header',
-    category: 'Basic',
-    attributes: { class: 'fa fa-header' },
+
+  bm.add("header", {
+    label: config.labelBlock,
+    category: config.category,
+    attributes: { class: "fa fa-header" },
     content: {
-      type: 'header',
-      content: 'Insert your header text here',
-      activeOnRender: 1
-    }
-  })
-}
+      type: "header",
+      content: config.placeholder,
+      activeOnRender: 1,
+    },
+  });
+};
