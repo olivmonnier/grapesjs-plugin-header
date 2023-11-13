@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-plugin-header",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Grapesjs Plugin Header",
   "main": "dist/index.js",
   "repository": {
