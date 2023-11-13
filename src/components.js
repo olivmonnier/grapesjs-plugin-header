@@ -1,45 +1,34 @@
-export default (editor, config = {}) => {
+export default (editor, opts = {}) => {
   const domc = editor.DomComponents;
-  const textType = domc.getType("text");
-  const textModel = textType.model;
-  const textView = textType.view;
 
-  domc.addType("header", {
-    model: textModel.extend(
-      {
-        defaults: Object.assign({}, textModel.prototype.defaults, {
+  domc.addType("header",
+    {
+      isComponent: (el) =>
+        el &&
+        el.tagName &&
+        ["h1", "h2", "h3", "h4", "h5", "h6"].includes(el.tagName.toLowerCase()),
+      extend: "text",
+      model: {
+        defaults: {
           "custom-name": "Header",
-          tagName: config.defaultTagName,
+          tagName: opts.defaultTagName,
           traits: [
             {
               type: "select",
               options: [
-                { value: "h1", name: config.labelN1 },
-                { value: "h2", name: config.labelN2 },
-                { value: "h3", name: config.labelN3 },
-                { value: "h4", name: config.labelN4 },
-                { value: "h5", name: config.labelN5 },
-                { value: "h6", name: config.labelN6 },
+                { value: "h1", name: opts.labelN1 },
+                { value: "h2", name: opts.labelN2 },
+                { value: "h3", name: opts.labelN3 },
+                { value: "h4", name: opts.labelN4 },
+                { value: "h5", name: opts.labelN5 },
+                { value: "h6", name: opts.labelN6 },
               ],
-              label: config.labelTrait,
+              label: opts.labelTrait,
               name: "tagName",
               changeProp: 1,
             },
           ],
-        }),
-      },
-      {
-        isComponent(el) {
-          if (
-            el &&
-            el.tagName &&
-            ["H1", "H2", "H3", "H4", "H5", "H6"].includes(el.tagName)
-          ) {
-            return { type: "header" };
-          }
         },
-      }
-    ),
-    view: textView,
-  });
+      },
+    })
 };
