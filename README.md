@@ -1,44 +1,77 @@
-# GrapesJS Plugin Header
+# Grapesjs Plugin Header
 
-This plugin adds a header block with different size level.
+[DEMO](##)
+> **Provide a live demo of your plugin**
+For a better user engagement create a simple live demo by using services like [JSFiddle](https://jsfiddle.net) [CodeSandbox](https://codesandbox.io) [CodePen](https://codepen.io) and link it here in your README (attaching a screenshot/gif will also be a plus).
+To help you in this process here below you will find the necessary HTML/CSS/JS, so it just a matter of copy-pasting on some of those services. After that delete this part and update the link above
+
+### HTML
+```html
+<link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
+<script src="https://unpkg.com/grapesjs"></script>
+<script src="https://unpkg.com/grapesjs-plugin-header"></script>
+
+<div id="gjs"></div>
+```
+
+### JS
+```js
+const editor = grapesjs.init({
+	container: '#gjs',
+  height: '100%',
+  fromElement: true,
+  storageManager: false,
+  plugins: ['grapesjs-plugin-header'],
+});
+```
+
+### CSS
+```css
+body, html {
+  margin: 0;
+  height: 100%;
+}
+```
+
 
 ## Summary
 
-- Plugin name: `grapesjs-plugin-header`
-- Blocks
-  - `header`
+* Plugin name: `grapesjs-plugin-header`
+* Components
+    * `component-id-1`
+    * `component-id-2`
+    * ...
+* Blocks
+    * `block-id-1`
+    * `block-id-2`
+    * ...
+
+
 
 ## Options
 
-| Option           | Description                 | Default                        |
-| ---------------- | --------------------------- | ------------------------------ |
-| `Size`           | `Header level`              | `h1`                           |
-| `category`       | `Category name`             | `Basic`                        |
-| `defaultTagName` | `TagName by default`        | `h1`                           |
-| `labelN1`        | `Header level 1 label`      | `One (largest)`                |
-| `labelN2`        | `Header level 2 label`      | `Two`                          |
-| `labelN3`        | `Header level 3 label`      | `Three`                        |
-| `labelN4`        | `Header level 4 label`      | `Four`                         |
-| `labelN5`        | `Header level 5 label`      | `Five`                         |
-| `labelN6`        | `Header level 6 label`      | `Six (smallest)`               |
-| `placeholder`    | `Text content in the block` | `Insert your header text here` |
+| Option | Description | Default |
+|-|-|-
+| `option1` | Description option | `default value` |
+
+
 
 ## Download
 
-- CDN
-  - `https://unpkg.com/grapesjs-plugin-header`
-- NPM
-  - `npm i grapesjs-plugin-header`
-- GIT
-  - `git clone https://github.com/olivmonnier/grapesjs-plugin-header.git`
+* CDN
+  * `https://unpkg.com/grapesjs-plugin-header`
+* NPM
+  * `npm i grapesjs-plugin-header`
+* GIT
+  * `git clone https://github.com/olivmonnier/grapesjs-plugin-header.git`
+
+
 
 ## Usage
 
+Directly in the browser
 ```html
-<link
-  href="https://unpkg.com/grapesjs/dist/css/grapes.min.css"
-  rel="stylesheet"
-/>
+<link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet"/>
 <script src="https://unpkg.com/grapesjs"></script>
 <script src="path/to/grapesjs-plugin-header.min.js"></script>
 
@@ -46,12 +79,37 @@ This plugin adds a header block with different size level.
 
 <script type="text/javascript">
   var editor = grapesjs.init({
-      container : '#gjs',
-      ...
-      plugins: ['grapesjs-plugin-header']
+      container: '#gjs',
+      // ...
+      plugins: ['grapesjs-plugin-header'],
+      pluginsOpts: {
+        'grapesjs-plugin-header': { /* options */ }
+      }
   });
 </script>
 ```
+
+Modern javascript
+```js
+import grapesjs from 'grapesjs';
+import plugin from 'grapesjs-plugin-header';
+import 'grapesjs/dist/css/grapes.min.css';
+
+const editor = grapesjs.init({
+  container : '#gjs',
+  // ...
+  plugins: [plugin],
+  pluginsOpts: {
+    [plugin]: { /* options */ }
+  }
+  // or
+  plugins: [
+    editor => plugin(editor, { /* options */ }),
+  ],
+});
+```
+
+
 
 ## Development
 
@@ -68,18 +126,20 @@ Install dependencies
 $ npm i
 ```
 
-The plugin relies on GrapesJS via `peerDependencies` so you have to install it manually (without adding it to package.json)
-
-```sh
-$ npm i grapesjs --no-save
-```
-
 Start the dev server
 
 ```sh
 $ npm start
 ```
 
+Build the source
+
+```sh
+$ npm run build
+```
+
+
+
 ## License
 
-BSD 3-Clause
+MIT
